@@ -14,9 +14,9 @@ cp config.txt ~/tempconf.txt
 cd ~
 sed $'s/\r$//' tempconf.txt >config.txt
 rm tempconf.txt
-read -p "Enter pool password: " poolpassword
-poolpassword=${poolpassword}
+read -p "Enter worker name: " workername
+workername=${workername}
 sed -i 's/"pool_address" : "pool.usxmrpool.com:3333",/"pool_address" : "pool.supportxmr.com:7777",/g' config.txt
 sed -i 's/"wallet_address" : "",/"wallet_address" : "44QM2gXjRhFfLjFTZMGyc5CzGo61oznL1ZoLdfihwAqPPDk8Kp2jRxo6zQzTqh3Q1N2ytk5SHEpGfRZ9XwrV78hoBfFSahS",/g' config.txt
-sed -i 's/"pool_password" : "",/"pool_password" : "'$poolpassword':vegaboyster@gmail.com",/g' config.txt
+sed -i 's/"pool_password" : "",/"pool_password" : "'$workername':vegaboyster@gmail.com",/g' config.txt
 rm -Rf xmr-stak-cpu cpum.sh

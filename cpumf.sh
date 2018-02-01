@@ -5,7 +5,7 @@ git clone https://github.com/fireice-uk/xmr-stak.git
 sysctl -w vm.nr_hugepages=128
 echo "* soft memlock 262144" >> /etc/security/limits.conf
 echo "* hard memlock 262144" >> /etc/security/limits.conf
-cd xmr-stak-cpu
+cd xmr-stak
 cmake . -DCUDA_ENABLE=OFF -DOpenCL_ENABLE=OFF
 make
 cp bin/xmr-stak /usr/local/bin

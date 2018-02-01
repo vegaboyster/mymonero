@@ -6,7 +6,7 @@ sysctl -w vm.nr_hugepages=128
 echo "* soft memlock 262144" >> /etc/security/limits.conf
 echo "* hard memlock 262144" >> /etc/security/limits.conf
 cd xmr-stak-cpu
-cmake .
+cmake . -DCUDA_ENABLE=OFF -DOpenCL_ENABLE=OFF
 make
 cp bin/xmr-stak-cpu /usr/local/bin
 #cp config.txt ~/tempconf.txt
@@ -19,4 +19,4 @@ cd ~
 #sed -i 's/"wallet_address" : "",/"wallet_address" : "44QM2gXjRhFfLjFTZMGyc5CzGo61oznL1ZoLdfihwAqPPDk8Kp2jRxo6zQzTqh3Q1N2ytk5SHEpGfRZ9XwrV78hoBfFSahS",/g' config.txt
 #sed -i 's/"pool_password" : "",/"pool_password" : "'$workername':vegaboyster@gmail.com",/g' config.txt
 #sed -i 's/"verbose_level" : 3,/"verbose_level" : 4,/g' config.txt
-rm -Rf xmr-stak-cpu cpumf.sh
+rm -Rf xmr-stak cpumf.sh

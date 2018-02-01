@@ -8,7 +8,7 @@ echo "* hard memlock 262144" >> /etc/security/limits.conf
 cd xmr-stak-cpu
 cmake . -DCUDA_ENABLE=OFF -DOpenCL_ENABLE=OFF
 make
-cp bin/xmr-stak-cpu /usr/local/bin
+cp bin/xmr-stak /usr/local/bin
 #cp config.txt ~/tempconf.txt
 cd ~
 #sed $'s/\r$//' tempconf.txt >config.txt
